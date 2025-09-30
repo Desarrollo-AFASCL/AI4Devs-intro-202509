@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reverse String</title>
+  <style>
+    :root { --gap: 16px; }
+    * { box-sizing: border-box; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 32px; color: #111827; }
+    h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 16px; }
+    .stack { display: grid; gap: var(--gap); max-width: 720px; }
+    .row { display: flex; gap: var(--gap); align-items: center; }
+    #textInput {
+      flex: 1;
+      padding: 14px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 18px;
+      outline: none;
+      max-width: 680px; /* input un poco más corto */
+    }
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #reverseBtn {
+      background: #1d4ed8; /* azul */
+      color: #fff;
+    }
+    #reverseBtn:active { transform: translateY(1px); }
+    #copyBtn {
+      background: #6b7280; /* gris */
+      color: #fff;
+    }
+    #copyBtn:active { transform: translateY(1px); }
+    #result {
+      min-height: 1.6em;
+      font-size: 22px;
+      margin-top: 8px;
+    }
+    .icon { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+  <main class="stack" role="main">
+    <h1>Reverse String</h1>
+
+    <div class="row">
+      <input id="textInput" type="text" placeholder="Hello, welcome to AI4Devs" aria-label="Texto a invertir" />
+    </div>
+
+    <div class="row">
+      <button id="reverseBtn" type="button" aria-label="Invertir texto">
+        <span>Reverse</span>
+        <!-- icono de recargar -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 12a9 9 0 1 0 3-6.708" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 3v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button id="copyBtn" type="button" aria-label="Copiar resultado">
+        <span>Copy</span>
+        <!-- icono portapapeles -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M16 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="4" y="4" width="10" height="12" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="result" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
